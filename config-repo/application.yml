@@ -1,10 +1,9 @@
 eureka:
   instance:
-    hostname: registry
-    prefer-ip-address: true
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:user}@${eureka.instance.hostname}:8761/eureka/
 
 hystrix:
   command:
